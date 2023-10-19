@@ -1,6 +1,5 @@
 import {useAppSelector} from "./redux.ts";
 
-
 export const useAuth = () => {
     const {email, token, id} = useAppSelector(state => state.user);
 
