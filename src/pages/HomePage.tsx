@@ -1,12 +1,9 @@
-import React, {useState} from 'react';
-import {Navigate, Route, Routes} from "react-router-dom";
+import React from 'react';
 
 const HomePage : React.FC = () => {
-    const [user] = useState(false);
     return (
-        <Routes>
-            <Route path="/" element={!user && <Navigate to="/register" replace={true} />} />
-        </Routes>
+        <>
+        </>
 
     );
 };
