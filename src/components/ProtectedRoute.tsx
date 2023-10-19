@@ -8,8 +8,10 @@ interface ProtectedRouteProps {
 }
 const ProtectedRoute = ({ redirectPath, userIsActive, children } : ProtectedRouteProps) => {
     if (!userIsActive) {
+
         return <Navigate to={redirectPath} replace />;
     }
+
     return children;
 };
 
