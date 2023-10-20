@@ -1,6 +1,6 @@
 import {useState} from 'react';
 
-const Form = ({title, handleClick}) => {
+const Form = ({title, handleClick} : {title: string, handleClick: (email: string, password: string) => void}) => {
     const [password, setPassword] = useState('')
     const [email, setEmail] = useState('')
     return (
@@ -18,7 +18,7 @@ const Form = ({title, handleClick}) => {
                 placeholder="password"
             />
             <button
-                onClick={handleClick}
+                onClick={() => handleClick(email, password)}
             >
                 {title}
             </button>
@@ -27,4 +27,4 @@ const Form = ({title, handleClick}) => {
     );
 };
 
-export default Form;
+export {Form};
