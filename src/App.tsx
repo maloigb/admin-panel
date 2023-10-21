@@ -5,7 +5,7 @@ import LoginPage from "./pages/LoginPage.tsx";
 import RegisterPage from "./pages/RegisterPage.tsx";
 import ProtectedRoute from "./components/ProtectedRoute.tsx";
 const App : React.FC = () => {
-    const [user] = useState('null')
+    const [user] = useState('')
     return (
         <Routes>
             <Route
