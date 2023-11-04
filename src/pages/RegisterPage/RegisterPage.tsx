@@ -9,11 +9,9 @@ const RegisterPage: React.FC = () => {
             <div className='container-signUp'>
                 <div className="container-signUp_text">
                     <h1>Register</h1>
+                    <Link to="/login">Sign in</Link>
                 </div>
                 <SignUp />
-                <p>
-                    Already have an Account? <Link to="/login">Sign in</Link>
-                </p>
             </div>
         </div>
     );

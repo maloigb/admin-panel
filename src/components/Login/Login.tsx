@@ -14,7 +14,6 @@ const Login: React.FC = () => {
     const handleLogin = async (email: string, password: string) => {
 
         try {
-
             const user = await authService.postLogin(email, password);
             dispatch(setUser(user));
             navigate('/');
