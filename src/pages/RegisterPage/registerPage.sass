@@ -1,0 +1,75 @@
+.container
+    background-color: rgb(20,26,40)
+    width: 100%
+    height: 100%
+    display: flex
+    flex-direction: column
+    align-items: center
+    justify-content: center
+
+    .container-signUp
+        width: 18rem
+        height: 12rem
+        background-color: rgb(27,37,55)
+        box-shadow: 0px 0px 15px 2px rgb(19, 23, 32)
+        border-radius: 7px
+        padding: 1%
+        color: rgb(54,155,128)
+        display: flex
+        flex-direction: column
+
+        .container-signUp_text
+            display: flex
+            align-items: center
+            justify-content: space-between
+            height: 25%
+            a
+                color: rgb(54,155,128)
+                border: 2px solid
+                padding: 7px 15px
+                border-radius: 3px
+                font-size: 0.9em
+                cursor: pointer
+                text-decoration: none
+
+            a:hover
+                color: rgb(40, 110, 91)
+
+        animation: container-login 2s linear 0s 1 normal both
+    
+    @keyframes container-login
+
+        0%
+            animation-timing-function: ease-in
+            opacity: 0
+            transform: translateY(-250px)
+
+        38%
+            animation-timing-function: ease-out
+            opacity: 1
+            transform: translateY(0)
+
+        55%
+            animation-timing-function: ease-in
+            transform: translateY(-65px)
+
+        72%
+            animation-timing-function: ease-out
+            transform: translateY(0)
+
+        81%
+            animation-timing-function: ease-in
+            transform: translateY(-28px)
+
+        90%
+            animation-timing-function: ease-out
+            transform: translateY(0)
+
+        95%
+            animation-timing-function: ease-in
+            transform: translateY(-8px)
+
+        100%
+            animation-timing-function: ease-out
+            transform: translateY(0)
+
