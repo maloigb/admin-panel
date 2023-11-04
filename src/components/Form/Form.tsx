@@ -1,30 +1,39 @@
-import {useState} from 'react';
+import { useState } from 'react';
+import './form.sass'
+import userIcon from '../../assets/user.svg'
+import passwordIcon from '../../assets/password.svg'
 
-const Form = ({title, handleClick} : {title: string, handleClick: (email: string, password: string) => void}) => {
-    const [password, setPassword] = useState('')
-    const [email, setEmail] = useState('')
+const Form = ({ title, handleClick, errorMessage }: { title: string, errorMessage: string, handleClick: (email: string, password: string) => void }) => {
+    const [password, setPassword] = useState('');
+    const [email, setEmail] = useState('');
     return (
-        <div>
-            <input
-                type="email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                placeholder="email"
-            />
-            <input
-                type="password"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-                placeholder="password"
-            />
+        <form className='container-form'>
+            <div className='container-form_input'>
+                <img src={userIcon} alt="User" />
+                <input
+                    type="email"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    placeholder="Enter your email"
+                />
+            </div>
+            <div className='container-form_input'>
+                <img src={passwordIcon} alt="User" />
+                <input
+                    type="password"
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
+                    placeholder="Enter your password"
+                />
+            </div>
             <button
                 onClick={() => handleClick(email, password)}
             >
                 {title}
             </button>
-            
-        </div>
+            {errorMessage}
+        </form>
     );
 };
 
-export {Form};
+export { Form };

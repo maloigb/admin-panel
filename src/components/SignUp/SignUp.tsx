@@ -6,11 +6,11 @@ import signUpServices from '../../api/services/signUp.ts';
 import { useNavigate } from 'react-router-dom';
 
 
-const SignUp : React.FC = () : React.ReactNode => {
-    const [errorMessage, setErrorMessage] = useState<string | null>(null);
+const SignUp: React.FC = (): React.ReactNode => {
+    const [errorMessage, setErrorMessage] = useState<string>('');
     const dispatch = useAppDispatch();
     const navigate = useNavigate();
-    const handleRegister = async (email : string, password : string) => {
+    const handleRegister = async (email: string, password: string) => {
         try {
             const user = await signUpServices.postSignUp(email, password);
             dispatch(setUser(user));
@@ -24,10 +24,11 @@ const SignUp : React.FC = () : React.ReactNode => {
     return (
         <>
             {errorMessage}
-        <Form
-            title="register"
-            handleClick={handleRegister}
-        />
+            <Form
+                title="register"
+                handleClick={handleRegister}
+                errorMessage={errorMessage}
+            />
         </>
 
     );
