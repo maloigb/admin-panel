@@ -3,11 +3,12 @@ import './form.sass'
 import userIcon from '../../assets/user.svg'
 import passwordIcon from '../../assets/password.svg'
 
-const Form = ({ title, handleClick, errorMessage }: { title: string, errorMessage: string, handleClick: (email: string, password: string) => void }) => {
+const Form = ({ title, handleClick, errorMessage }: { title: string, errorMessage: string, handleClick: (event: React.FormEvent<HTMLFormElement>, email: string, password: string,) => void }) => {
     const [password, setPassword] = useState('');
     const [email, setEmail] = useState('');
     return (
-        <form className='container-form'>
+        <form className='container-form'
+            onSubmit={(event) => handleClick(event, email, password)}>
             <div className='container-form_input'>
                 <img src={userIcon} alt="User" />
                 <input
@@ -27,7 +28,7 @@ const Form = ({ title, handleClick, errorMessage }: { title: string, errorMessag
                 />
             </div>
             <button
-                onClick={() => handleClick(email, password)}
+            // onClick={() => handleClick(email, password)}
             >
                 {title}
             </button>

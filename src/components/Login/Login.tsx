@@ -11,14 +11,14 @@ const Login: React.FC = () => {
     const [errorMessage, setErrorMessage] = useState<string>('');
     const navigate = useNavigate();
 
-    const handleLogin = async (email: string, password: string) => {
-
+    const handleLogin = async (event : React.FormEvent<HTMLFormElement>, email: string, password: string) => {
+        event.preventDefault()
+        
         try {
             const user = await authService.postLogin(email, password);
             dispatch(setUser(user));
             navigate('/');
         } catch (error) {
-
             setErrorMessage((error as Error).message);
         }
     }
