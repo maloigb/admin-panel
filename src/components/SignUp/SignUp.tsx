@@ -10,7 +10,8 @@ const SignUp: React.FC = (): React.ReactNode => {
     const [errorMessage, setErrorMessage] = useState<string>('');
     const dispatch = useAppDispatch();
     const navigate = useNavigate();
-    const handleRegister = async (email: string, password: string) => {
+    const handleRegister = async (event : React.FormEvent<HTMLFormElement>, email: string, password: string) => {
+        event.preventDefault()
         try {
             const user = await signUpServices.postSignUp(email, password);
             dispatch(setUser(user));
